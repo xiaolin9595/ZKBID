@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Run My Module",
+            "type": "python",
+            "request": "launch",
+            "program": "C:\\Users\\lin\\Desktop\\ZKBID\\code\\ringsgnature\\py\\ring_signatures.py",
+            // "module": "ring_signatures", // 如果使用 module 选项，请确保注释掉 program 选项
+            "cwd": "C:\\Users\\lin\\Desktop\\ZKBID\\code\\ringsgnature\\py", // 当前工作目录
+            "console": "integratedTerminal",
+            "args": []
+        }
+    ]
+}

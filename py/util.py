@@ -1,6 +1,6 @@
 #from bn128_curve import *
 from optimized_curve import *
-import sha3
+import hashlib
 
 #alt_bn_128 curve parameters
 Ncurve = curve_order
@@ -90,21 +90,24 @@ def point_to_str(p):
     return s
 
 def hash_of_int(i):
-    hasher = sha3.keccak_256(int_to_bytes32(i))
-    x = bytes_to_int(hasher.digest())
-    return x
-
-def hash_of_point(p):
-    p = normalize(p)
-    hasher = sha3.keccak_256()
+    hasher = hashlib.sha3_256()
     hasher.update(int_to_bytes32(p[0].n))
     hasher.update(int_to_bytes32(p[1].n))
     x = bytes_to_int(hasher.digest())
     return x
 
+def hash_of_point(p):
+    p = normalize(p)
+    hasher = hashlib.sha3_256()
+    hasher.update(int_to_bytes32(p[0].n))
+    hasher.update(int_to_bytes32(p[1].n))
+
+    x = bytes_to_int(hasher.digest())
+    return x
+
 def hash_to_point(p):
     p = normalize(p)
-    hasher = sha3.keccak_256()
+    hasher = hashlib.sha3_256()
     hasher.update(int_to_bytes32(p[0].n))
     hasher.update(int_to_bytes32(p[1].n))
     x = bytes_to_int(hasher.digest()) % Pcurve

@@ -1,5 +1,5 @@
 from util import *
-import sha3
+import hashlib
 
 #Ring Signature Functions
 class MSAG:
@@ -15,10 +15,8 @@ class MSAG:
         self.signature = signature
 
     def RingHashFunction(msgHash, point):
-        hasher = sha3.keccak_256()
-        hasher.update(msgHash)
-        hasher = add_point_to_hasher(hasher, point)
-        return bytes_to_int(hasher.digest())
+        hasher = hashlib.sha3_256(hasher, point)
+        return bytes_to_int(hasher.digest)
 
     def StartRing_NoHash(alpha):
         point = multiply(G1, alpha)
@@ -59,9 +57,8 @@ class MSAG:
         signature = [0]*(m*n+1)
 
         #Initialize c1 hasher (total length of array + message hash)
-        hasher = sha3.keccak_256()
-        hasher.update(int_to_bytes32(2*m+1))
-        hasher.update(msgHash)
+        hasher = hashlib.sha3_256(int_to_bytes32(2*m+1), msgHash)
+
 
         #Calulate 1st half of all rings (for c1 calculation)
         for i in range(0, m):
@@ -166,7 +163,7 @@ class MSAG:
         signature = [0]*(m*n+1)
 
         #Initialize c1 hasher (total length of array + message hash)
-        hasher = sha3.keccak_256()
+        hasher = hashlib.sha3_256()
         hasher.update(int_to_bytes32(2*m+1))
         hasher.update(msgHash)
 
@@ -265,7 +262,7 @@ class MSAG:
         if (len(self.signature) != (m*n+1)): return False
 
         #Initialize c1 hasher (total length of array + message hash)
-        hasher = sha3.keccak_256()
+        hasher = hashlib.sha3_256()
         hasher.update(int_to_bytes32(2*m+1))
         hasher.update(self.msgHash)
 
@@ -317,7 +314,7 @@ class MLSAG:
         self.signature = signature
 
     def LinkableRingHashFunction(msgHash, left, right):
-        hasher = sha3.keccak_256()
+        hasher = hashlib.sha3_256()
         hasher.update(msgHash)
         hasher = add_point_to_hasher(hasher, left)
         hasher = add_point_to_hasher(hasher, right)
@@ -485,7 +482,7 @@ class MLSAG:
         I = [0]*m
 
         #Initialize c1 hasher (total length of array + message hash)
-        hasher = sha3.keccak_256()
+        hasher =hashlib.sha3_256()
         hasher.update(int_to_bytes32(4*m+1))
         hasher.update(msgHash)
 
@@ -593,7 +590,7 @@ class MLSAG:
         if (len(self.signature) != (m*n+1)): return False
 
         #Initialize c1 hasher (total length of array + message hash)
-        hasher = sha3.keccak_256()
+        hasher = hashlib.sha3_256()
         hasher.update(int_to_bytes32(4*m+1))
         hasher.update(self.msgHash)
 
@@ -654,7 +651,7 @@ def MSAG_Test(m=4, n=3):
         pub_keys = pub_keys + [P]
 
     msg = b"MSAGTest"
-    hasher = sha3.keccak_256()
+    hasher = hashlib.sha3_256()
     hasher.update(msg)
     msgHash = int_to_bytes32(bytes_to_int(hasher.digest()))
     
@@ -683,7 +680,7 @@ def MLSAG_Test(m=4, n=3):
         pub_keys = pub_keys + [P]
 
     msg = b"MLSAGTest"
-    hasher = sha3.keccak_256()
+    hasher = hashlib.sha3_256()
     hasher.update(msg)
     msgHash = int_to_bytes32(bytes_to_int(hasher.digest()))
     
@@ -697,7 +694,34 @@ def MLSAG_Test(m=4, n=3):
 
 
 
+def main(m=4, n=3):
+    import random
+    xk = []
+    indices = []
+    pub_keys = []
 
-        
-        
+    #Generate Private Keys
+    for i in range(0, m):
+        xk = xk + [getRandom()]
+        indices = indices + [random.randrange(0, n)]
+
+    #Generate Mix-in Public Keys
+    for i in range(0, m*(n-1)):
+        P = multiply(G1, getRandom())
+        pub_keys = pub_keys + [P]
+
+    msg = b"MLSAGTest"
+    hasher = hashlib.sha3_256()
+    hasher.update(msg)
+    msgHash = int_to_bytes32(bytes_to_int(hasher.digest()))
+    
+    mlsag_signature = MLSAG.Sign_GenRandom(m, msgHash, xk, indices, pub_keys)
+    mlsag_signature.Print()
+
+    if (mlsag_signature.Verify()):
+        print("MLSAG Verification Success!")
+    else:
+        print("MLSAG Verification Failure!")
+if __name__ == '__main__':
+	main()
         
