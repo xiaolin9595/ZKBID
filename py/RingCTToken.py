@@ -308,6 +308,7 @@ class RingCTToken:
         print("Send Tx Data")
         print("===================================================================")
         sig.Print_MEW()
+        
         return (out_rp, sig)
 
     def GenerateWithdrawTx(self, redeem_eth_address, redeem_eth_value, UTXOindices, mixins=2, output_values=None, pubViewKeys=None, pubSpendKeys=None):
@@ -485,7 +486,7 @@ class RingCTToken:
         #Figure out which UTXOs must be spent, pick sequentially for now but may need a better algorithm to preserve privacy
         utxo_indices = []
         utxo_total = 0
-        utxo_remainder = 0
+        utxo_remainder = 0 
         i = 0
         while (utxo_total < value):
             #Fetch UTXO Value

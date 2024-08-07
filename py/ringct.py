@@ -77,7 +77,7 @@ class RingCT:
         z = (total_in_bf + Ncurve - total_out_bf) % Ncurve
 
         #Add redeemed token value to out_value, only used in withdrawal signatures
-        out_value = out_value + redeem_eth_value;
+        out_value = out_value + redeem_eth_value
 
         assert(in_value == out_value)
         assert(z != 0) #blinding factors must add to a non-zero otherwise privacy is erased!
@@ -231,7 +231,7 @@ class RingCT:
 
         #Verify signature
         return self.mlsag.Verify()
-
+    #对交易进行编码
     def Serialize(self):
         out = [self.redeem_eth_address, self.redeem_eth_value]
 

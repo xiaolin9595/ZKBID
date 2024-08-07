@@ -1,5 +1,11 @@
 from util import *
 import hashlib
+import json
+from optimized_field_elements import FQ
+def int_to_uint256_bytes(n):
+    if not (0 <= n < 2**256):
+        raise ValueError("Integer out of range for uint256")
+    return n.to_bytes(32, byteorder='big')
 
 #Ring Signature Functions
 class MSAG:
@@ -616,25 +622,69 @@ class MLSAG:
         ck = bytes_to_int(hasher.digest())
         return (self.signature[0] == ck)
 
-    def Print(self):
+    def Print(self,n):
+        file_path = 'data'+str(n)+'.json'
         print("MLSAG Signature:")
         print("Dimensions: " + str(len(self.key_images)) + " x " + str(len(self.pub_keys)//len(self.key_images)))
         print("Message Hash: ")
-        print(hex(bytes_to_int(self.msgHash)))
-        
-        print("Key Images:")
+        hash=hex(bytes_to_int(self.msgHash))
+        print(hash)
+        msgHashjson=json.dumps(hash,indent=4)
+        print(msgHashjson)
+        with open(file_path, 'w') as file: 
+            file.write(msgHashjson)
+        print("Key Images Compressed:")
         for i in range(0, len(self.key_images)):
             print(hex(CompressPoint(self.key_images[i])))
+        print("Key Images :")
+        image=normalize(self.key_images[0])
+        imageout=['0x'+int_to_bytes32(image[0].n).hex(),'0x'+int_to_bytes32(image[1].n).hex()]
+        for i in range(1, len(self.key_images)):
+            normalize(self.key_images[i])
+            imageout+=['0x'+int_to_bytes32(image[i].n).hex(),'0x'+int_to_bytes32(image[i].n).hex()]
+        imageoutjson = json.dumps(imageout, indent=4)
+        print(imageoutjson)
 
-        print("Pub Keys:")
+
+        print("Pub Keys Compressed:")
         for i in range(0, len(self.pub_keys)):
+            
             print(hex(CompressPoint(self.pub_keys[i])))
 
-        print("Signature:")
-        for i in range(0, len(self.signature)):
-            print(hex(self.signature[i]))
+        print("Pub Keys :")
+        print (len(self.pub_keys))
+        pk=normalize(self.pub_keys[0])
+        pkout =['0x'+int_to_bytes32(pk[0].n).hex(),'0x'+int_to_bytes32(pk[1].n).hex()]
+        for i in range(1, len(self.pub_keys)):
+            pk=normalize(self.pub_keys[i])
+           # print("val:",pk)
+            #print("type:", type(pk))
+            pkout += ['0x'+int_to_bytes32(pk[0].n).hex(),'0x'+int_to_bytes32(pk[1].n).hex()]
+        pkoutjson = json.dumps(pkout, indent=4)
+        print(pkoutjson)
 
-def MSAG_Test(m=4, n=3):
+            
+       # formatted_pub_keys=[hex(coord)for pk in self.pub_keys for coord in pk]
+        #print(formatted_pub_keys)
+        print("Signature:")
+        print("type:",type(self.signature[0]))
+        sigout=[hex(self.signature[0])]
+        for i in range(1, len(self.signature)):
+            sigout+=[hex(self.signature[i])]
+        sigoutjson = json.dumps(sigout, indent=4)
+        print(sigoutjson)
+        data={
+            'msghash':hash,
+            'keyimage': imageout,
+            'pubkeys': pkout,
+            'signatures': sigout,
+        }
+        print(data)
+        with open(file_path, 'w') as file:
+            json.dump(data,file)
+        
+
+def MSAG_Test(m=1, n=4):
     import random
     xk = []
     indices = []
@@ -678,6 +728,7 @@ def MLSAG_Test(m=4, n=3):
     for i in range(0, m*(n-1)):
         P = multiply(G1, getRandom())
         pub_keys = pub_keys + [P]
+        
 
     msg = b"MLSAGTest"
     hasher = hashlib.sha3_256()
@@ -694,34 +745,38 @@ def MLSAG_Test(m=4, n=3):
 
 
 
-def main(m=4, n=3):
+def main( ):
+   
     import random
-    xk = []
-    indices = []
-    pub_keys = []
+    m=1
+    for n in range(2,4):
+        xk = []
+        indices = []
+        pub_keys = []
 
-    #Generate Private Keys
-    for i in range(0, m):
-        xk = xk + [getRandom()]
-        indices = indices + [random.randrange(0, n)]
+        #Generate Private Keys
+        for i in range(0, m):
+            xk = xk + [getRandom()]
+            indices = indices + [random.randrange(0, n)]
 
-    #Generate Mix-in Public Keys
-    for i in range(0, m*(n-1)):
-        P = multiply(G1, getRandom())
-        pub_keys = pub_keys + [P]
+        #Generate Mix-in Public Keys
+        for i in range(0, m*(n-1)):
+            P = multiply(G1, getRandom())
+            pub_keys = pub_keys + [P]
+            print(P)
 
-    msg = b"MLSAGTest"
-    hasher = hashlib.sha3_256()
-    hasher.update(msg)
-    msgHash = int_to_bytes32(bytes_to_int(hasher.digest()))
-    
-    mlsag_signature = MLSAG.Sign_GenRandom(m, msgHash, xk, indices, pub_keys)
-    mlsag_signature.Print()
+        msg = b"MLSAGTest"
+        hasher = hashlib.sha3_256()
+        hasher.update(msg)
+        msgHash = int_to_bytes32(bytes_to_int(hasher.digest()))
+        
+        mlsag_signature = MLSAG.Sign_GenRandom(m, msgHash, xk, indices, pub_keys)
+        mlsag_signature.Print(n)
 
-    if (mlsag_signature.Verify()):
-        print("MLSAG Verification Success!")
-    else:
-        print("MLSAG Verification Failure!")
+  #  if (mlsag_signature.Verify()):
+   #     print("MLSAG Verification Success!")
+    #else:
+     #   print("MLSAG Verification Failure!")
 if __name__ == '__main__':
 	main()
         
