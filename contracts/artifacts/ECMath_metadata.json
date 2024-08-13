@@ -1,0 +1,803 @@
+{
+	"compiler": {
+		"version": "0.4.26+commit.4563c3fc"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "p_add",
+						"type": "uint256[2]"
+					},
+					{
+						"name": "s",
+						"type": "uint256"
+					}
+				],
+				"name": "AddMultiplyH",
+				"outputs": [
+					{
+						"name": "p0",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "s",
+						"type": "uint256"
+					}
+				],
+				"name": "MultiplyG1",
+				"outputs": [
+					{
+						"name": "p0",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "p0",
+						"type": "uint256[2]"
+					},
+					{
+						"name": "p1",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "Add",
+				"outputs": [
+					{
+						"name": "p2",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "privatekey",
+						"type": "uint256"
+					}
+				],
+				"name": "GetPublicKeyFromPrivateKey",
+				"outputs": [
+					{
+						"name": "PubKey",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "privatekey",
+						"type": "uint256"
+					}
+				],
+				"name": "GetAddressFromPrivateKey",
+				"outputs": [
+					{
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "p1",
+						"type": "uint256[2]"
+					},
+					{
+						"name": "p2",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "Equals",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "X",
+						"type": "uint256[]"
+					},
+					{
+						"name": "Y",
+						"type": "uint256[]"
+					}
+				],
+				"name": "VectorAdd",
+				"outputs": [
+					{
+						"name": "Z",
+						"type": "uint256[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "PubKey",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "GetAddress",
+				"outputs": [
+					{
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "X",
+						"type": "uint256[]"
+					},
+					{
+						"name": "s",
+						"type": "uint256"
+					}
+				],
+				"name": "VectorScale",
+				"outputs": [
+					{
+						"name": "Z",
+						"type": "uint256[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "Pin",
+						"type": "uint256"
+					}
+				],
+				"name": "ExpandPoint",
+				"outputs": [
+					{
+						"name": "Pout",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "p1",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "Negate",
+				"outputs": [
+					{
+						"name": "p2",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "p",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "HashToPoint",
+				"outputs": [
+					{
+						"name": "h",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "s",
+						"type": "uint256"
+					}
+				],
+				"name": "MultiplyH",
+				"outputs": [
+					{
+						"name": "p0",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "x",
+						"type": "uint256"
+					}
+				],
+				"name": "EvaluateCurve",
+				"outputs": [
+					{
+						"name": "y",
+						"type": "uint256"
+					},
+					{
+						"name": "onCurve",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "Pin",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "CompressPoint",
+				"outputs": [
+					{
+						"name": "Pout",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "point",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "HashOfPoint",
+				"outputs": [
+					{
+						"name": "h",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "p0",
+						"type": "uint256[2]"
+					},
+					{
+						"name": "p1",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "Subtract",
+				"outputs": [
+					{
+						"name": "p2",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "X",
+						"type": "uint256[]"
+					},
+					{
+						"name": "Y",
+						"type": "uint256[]"
+					},
+					{
+						"name": "x",
+						"type": "uint256[]"
+					},
+					{
+						"name": "y",
+						"type": "uint256[]"
+					}
+				],
+				"name": "CommitAB",
+				"outputs": [
+					{
+						"name": "px",
+						"type": "uint256[2]"
+					},
+					{
+						"name": "py",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "N",
+						"type": "uint256"
+					}
+				],
+				"name": "GetGiHi",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256[]"
+					},
+					{
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "N",
+						"type": "uint256"
+					}
+				],
+				"name": "GenerateBasePointVectors",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "p_add",
+						"type": "uint256[2]"
+					},
+					{
+						"name": "p_mul",
+						"type": "uint256[2]"
+					},
+					{
+						"name": "s",
+						"type": "uint256"
+					}
+				],
+				"name": "AddMultiply",
+				"outputs": [
+					{
+						"name": "p0",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "GetGiHiLength",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "Pin",
+						"type": "uint256[2]"
+					},
+					{
+						"name": "P",
+						"type": "uint256[]"
+					},
+					{
+						"name": "s",
+						"type": "uint256[]"
+					},
+					{
+						"name": "start",
+						"type": "uint256"
+					},
+					{
+						"name": "end",
+						"type": "uint256"
+					}
+				],
+				"name": "AddMultiExp",
+				"outputs": [
+					{
+						"name": "Pout",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "GetG1",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "p_add",
+						"type": "uint256[2]"
+					},
+					{
+						"name": "s",
+						"type": "uint256"
+					}
+				],
+				"name": "AddMultiplyG1",
+				"outputs": [
+					{
+						"name": "p0",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "GetInfinity",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "P",
+						"type": "uint256[]"
+					},
+					{
+						"name": "s",
+						"type": "uint256[]"
+					},
+					{
+						"name": "start",
+						"type": "uint256"
+					},
+					{
+						"name": "end",
+						"type": "uint256"
+					}
+				],
+				"name": "MultiExp",
+				"outputs": [
+					{
+						"name": "Pout",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "GetPCurve",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "Kill",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "p0",
+						"type": "uint256[2]"
+					},
+					{
+						"name": "s",
+						"type": "uint256"
+					}
+				],
+				"name": "Multiply",
+				"outputs": [
+					{
+						"name": "p1",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "GetH",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "X",
+						"type": "uint256[]"
+					},
+					{
+						"name": "s",
+						"type": "uint256[]"
+					}
+				],
+				"name": "VectorMul",
+				"outputs": [
+					{
+						"name": "Z",
+						"type": "uint256[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "GetNCurve",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "s_G1",
+						"type": "uint256"
+					},
+					{
+						"name": "s_H",
+						"type": "uint256"
+					}
+				],
+				"name": "CommitG1H",
+				"outputs": [
+					{
+						"name": "p0",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"name": "N",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "marker",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"name": "data",
+						"type": "uint256"
+					}
+				],
+				"name": "DebugEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "marker",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"name": "data",
+						"type": "uint256[]"
+					}
+				],
+				"name": "DebugEvent2",
+				"type": "event"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ECMath.sol": "ECMath"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Debuggable.sol": {
+			"keccak256": "0x207a3fb9b2578336e6007e2c7551bc43a8b79ce2fb901cc5c0c7851c15831ae5",
+			"urls": [
+				"bzzr://fb95cdac2ec767f634bf8f6462beb7c1700c16c2e21a39a3a3e87a1395bf6015"
+			]
+		},
+		"ECMath.sol": {
+			"keccak256": "0x318c95b75c9fe34c5ee002e132019f01285e00305e9211a1bc97a802d4835a6f",
+			"urls": [
+				"bzzr://8cee48d7776674f3521edbb0f977410edb13460abe13bdbd918ddd09f6a44e2e"
+			]
+		}
+	},
+	"version": 1
+}

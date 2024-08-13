@@ -749,7 +749,7 @@ def main( ):
    
     import random
     m=1
-    for n in range(2,4):
+    for n in range(2,5):
         xk = []
         indices = []
         pub_keys = []

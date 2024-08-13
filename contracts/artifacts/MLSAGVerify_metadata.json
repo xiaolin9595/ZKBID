@@ -1,0 +1,755 @@
+{
+	"compiler": {
+		"version": "0.4.26+commit.4563c3fc"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "msgHash",
+						"type": "uint256"
+					},
+					{
+						"name": "P",
+						"type": "uint256[]"
+					},
+					{
+						"name": "signature",
+						"type": "uint256[]"
+					}
+				],
+				"name": "VerifySAG_Compressed",
+				"outputs": [
+					{
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "msgHash",
+						"type": "uint256"
+					},
+					{
+						"name": "I",
+						"type": "uint256[]"
+					},
+					{
+						"name": "P",
+						"type": "uint256[]"
+					},
+					{
+						"name": "signature",
+						"type": "uint256[]"
+					}
+				],
+				"name": "VerifyMLSAG_Compressed",
+				"outputs": [
+					{
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "msgHash",
+						"type": "uint256"
+					},
+					{
+						"name": "I",
+						"type": "uint256[]"
+					},
+					{
+						"name": "P",
+						"type": "uint256[]"
+					},
+					{
+						"name": "signature",
+						"type": "uint256[]"
+					}
+				],
+				"name": "VerifyLSAG",
+				"outputs": [
+					{
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "msgHash",
+						"type": "uint256"
+					},
+					{
+						"name": "alpha",
+						"type": "uint256"
+					}
+				],
+				"name": "StartRing",
+				"outputs": [
+					{
+						"name": "ckp",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "alpha",
+						"type": "uint256"
+					},
+					{
+						"name": "P",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "StartLinkableRing_NoHash",
+				"outputs": [
+					{
+						"name": "Lout",
+						"type": "uint256[2]"
+					},
+					{
+						"name": "Rout",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "ck",
+						"type": "uint256"
+					},
+					{
+						"name": "sk",
+						"type": "uint256"
+					},
+					{
+						"name": "P",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "CalculateRingSegment_NoHash",
+				"outputs": [
+					{
+						"name": "Pout",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "msgHash",
+						"type": "uint256"
+					},
+					{
+						"name": "alpha",
+						"type": "uint256"
+					},
+					{
+						"name": "P",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "StartLinkableRing",
+				"outputs": [
+					{
+						"name": "ckp",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "m",
+						"type": "uint256"
+					},
+					{
+						"name": "msgHash",
+						"type": "uint256"
+					},
+					{
+						"name": "P",
+						"type": "uint256[]"
+					},
+					{
+						"name": "signature",
+						"type": "uint256[]"
+					}
+				],
+				"name": "VerifyMSAG_Compressed",
+				"outputs": [
+					{
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "array",
+						"type": "uint256[]"
+					}
+				],
+				"name": "Keccak256OfArray",
+				"outputs": [
+					{
+						"name": "out",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "m",
+						"type": "uint256"
+					},
+					{
+						"name": "msgHash",
+						"type": "uint256"
+					},
+					{
+						"name": "P",
+						"type": "uint256[]"
+					},
+					{
+						"name": "signature",
+						"type": "uint256[]"
+					}
+				],
+				"name": "VerifyMSAG",
+				"outputs": [
+					{
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "alpha",
+						"type": "uint256"
+					},
+					{
+						"name": "c",
+						"type": "uint256"
+					},
+					{
+						"name": "xk",
+						"type": "uint256"
+					}
+				],
+				"name": "CompleteRing",
+				"outputs": [
+					{
+						"name": "s",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "msgHash",
+						"type": "uint256"
+					},
+					{
+						"name": "left",
+						"type": "uint256[2]"
+					},
+					{
+						"name": "right",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "LinkableRingHashFunction",
+				"outputs": [
+					{
+						"name": "h",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "msgHash",
+						"type": "uint256"
+					},
+					{
+						"name": "point",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "RingHashFunction",
+				"outputs": [
+					{
+						"name": "h",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "ck",
+						"type": "uint256"
+					},
+					{
+						"name": "sk",
+						"type": "uint256"
+					},
+					{
+						"name": "P",
+						"type": "uint256[2]"
+					},
+					{
+						"name": "I",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "CalculateLinkableRingSegment_NoHash",
+				"outputs": [
+					{
+						"name": "Lout",
+						"type": "uint256[2]"
+					},
+					{
+						"name": "Rout",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "ecMathAddr",
+						"type": "address"
+					}
+				],
+				"name": "ECMath_ChangeAddress",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "pk",
+						"type": "uint256"
+					}
+				],
+				"name": "CalculateKeyImageFromPrivKey",
+				"outputs": [
+					{
+						"name": "I",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "Kill",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "msgHash",
+						"type": "uint256"
+					},
+					{
+						"name": "I",
+						"type": "uint256[]"
+					},
+					{
+						"name": "P",
+						"type": "uint256[]"
+					},
+					{
+						"name": "signature",
+						"type": "uint256[]"
+					}
+				],
+				"name": "VerifyMLSAG",
+				"outputs": [
+					{
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "msgHash",
+						"type": "uint256"
+					},
+					{
+						"name": "P",
+						"type": "uint256[]"
+					},
+					{
+						"name": "signature",
+						"type": "uint256[]"
+					}
+				],
+				"name": "VerifySAG",
+				"outputs": [
+					{
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "alpha",
+						"type": "uint256"
+					}
+				],
+				"name": "StartRing_NoHash",
+				"outputs": [
+					{
+						"name": "Pout",
+						"type": "uint256[2]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "ECMath_GetAddress",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "msgHash",
+						"type": "uint256"
+					},
+					{
+						"name": "ck",
+						"type": "uint256"
+					},
+					{
+						"name": "sk",
+						"type": "uint256"
+					},
+					{
+						"name": "P",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "CalculateRingSegment",
+				"outputs": [
+					{
+						"name": "ckp",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "ECMath_GetCodeSize",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "msgHash",
+						"type": "uint256"
+					},
+					{
+						"name": "ck",
+						"type": "uint256"
+					},
+					{
+						"name": "sk",
+						"type": "uint256"
+					},
+					{
+						"name": "P",
+						"type": "uint256[2]"
+					},
+					{
+						"name": "I",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "CalculateLinkableRingSegment",
+				"outputs": [
+					{
+						"name": "ckp",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "msgHash",
+						"type": "uint256"
+					},
+					{
+						"name": "I",
+						"type": "uint256"
+					},
+					{
+						"name": "P",
+						"type": "uint256[]"
+					},
+					{
+						"name": "signature",
+						"type": "uint256[]"
+					}
+				],
+				"name": "VerifyLSAG_Compressed",
+				"outputs": [
+					{
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"name": "ecMathAddr",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"name": "_new",
+						"type": "address"
+					}
+				],
+				"name": "ContractAddressChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "marker",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"name": "data",
+						"type": "uint256"
+					}
+				],
+				"name": "DebugEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "marker",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"name": "data",
+						"type": "uint256[]"
+					}
+				],
+				"name": "DebugEvent2",
+				"type": "event"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"MLSAGVerify.sol": "MLSAGVerify"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Debuggable.sol": {
+			"keccak256": "0x207a3fb9b2578336e6007e2c7551bc43a8b79ce2fb901cc5c0c7851c15831ae5",
+			"urls": [
+				"bzzr://fb95cdac2ec767f634bf8f6462beb7c1700c16c2e21a39a3a3e87a1395bf6015"
+			]
+		},
+		"ECMathInterface.sol": {
+			"keccak256": "0x63a7629955422f997358b1c2fdd52d2404d9bdba9ee4704576a305126938e95f",
+			"urls": [
+				"bzzr://57dff9b77afe326b6fa0260f25843c4560eb869980ccc04a8d8e89beacc760f2"
+			]
+		},
+		"MLSAGVerify.sol": {
+			"keccak256": "0xe20237827ecfd715fac6d488e32f9d6031b7650ee36dbf216aec74b9713cf4f3",
+			"urls": [
+				"bzzr://8f6f9c5670a784953918eea85746543e395cef7ca9d09b362d309b856d57f2a3"
+			]
+		}
+	},
+	"version": 1
+}

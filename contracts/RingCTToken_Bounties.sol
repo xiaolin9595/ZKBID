@@ -259,6 +259,7 @@ contract RingCTToken is RingCTTxVerifyInterface, ECMathInterface, BulletproofVer
         }
 		
 		//Verify key images are unused
+		//验证该私钥没有使用过
         uint256 index = 0;
         for (i = 0; i < (args.I.length / 2); i++) {
             if (key_images[ecMath.CompressPoint([args.I[index], args.I[index+1]])]) return false;

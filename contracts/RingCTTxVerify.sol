@@ -102,6 +102,7 @@ contract RingCTTxVerify is ECMathInterface, MLSAGVerifyInterface {
 		}
         
         //Verify ring signature (MLSAG)
+        //调用验证签名的函数
 		if (args.redeem_eth_value > 0)
 			return mlsagVerify.VerifyMLSAG(HashWithdrawMsg(args.redeem_eth_address, args.redeem_eth_value, args.output_tx), args.I, P, args.signature);
         else
