@@ -1,0 +1,24 @@
+{
+  "key_images": [
+    "0x10f8d48c8d4210d9822ecabfc39a861f5c90b2f6c15f7607cefff0258598ed42",
+    "0x16f0a7073e15294d5a64bb3d3ab768a0e7a5aa69f19e1a38549fb89e4d1b602d"
+  ],
+  "m": 1,
+  "message_domain": "zkbid-mlsags-signing-benchmark",
+  "message_hash": "0x5a87f1f9c7bcf60027eb6474d8b5cb458cc45027aa20c3359d9b1dee866c0267",
+  "private_key": "0x08ef33122ff009d095ef6c4216e01b9758f9c2fa179ca94ccf89ca420cc2abeb",
+  "pubkeys": [
+    "0x05a8bc98c881608ec98052772ceb990eb5a302a7308b65bd1219ffc65d0d68af",
+    "0x275f846b36e14fcefeb859eb87c361c7af66ac64edadfecb53762e9d402b199a",
+    "0x075388a2e2f76dc72b4e673d7429f5010ffe8890bc07663da36904c6570bf38f",
+    "0x094feee41dfefe04087e5558517dd212b2f29671ca3371515c9f73032ea34230"
+  ],
+  "rep": 4,
+  "ring_size": 2,
+  "signature": [
+    "0xc5a503d8ccacb57b8cf912b83ac3e02a668b0950121dbee74f3452f9fe775d8f",
+    "0x24445bee96c47f31f37a449165fa86a0733c50fa807a13425304e3a3aabda97a",
+    "0x12ffdde100d04f8fff62454d27e1cdc636f6dc1d3951ae70394807220ff6bb75"
+  ],
+  "signer_index": 1
+}

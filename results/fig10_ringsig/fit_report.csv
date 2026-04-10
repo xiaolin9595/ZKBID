@@ -1,0 +1,3 @@
+metric,slope,intercept,r_squared
+signing_time_ms,13.339023,4.415590,0.999983
+verification_gas,64982.239412,27906.851167,0.999998

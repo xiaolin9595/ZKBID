@@ -1,0 +1,91 @@
+\begin{tikzpicture}
+  % Left y-axis: signing time (ms).
+  \begin{axis}[
+    zkamsAxis,
+    name=zkamsRingAxis,
+    scale only axis,
+    % Keep the full tikzpicture within a single IEEE column (avoid overfull hbox).
+    width=0.70\columnwidth,
+    height=0.48\columnwidth,
+    xlabel={Ring Size ($L$)},
+    ylabel={Signing Time (ms)},
+    xmode=log,
+    log basis x=2,
+    xmin=1, xmax=256,
+    ymin=0, ymax=4000,
+    ytick={0,1000,2000,3000,4000},
+    xtick={1,2,4,8,16,32,64,128,256},
+    legend style={at={(0.02,0.98)}, anchor=north west},
+  ]
+    \addplot[
+      zkBlueLine,
+      dashed,
+      mark=o,
+      mark options={fill=white, draw=zkBlue},
+    ] coordinates {
+      (1,19.190317)
+      (2,32.361154)
+      (4,60.670213)
+      (8,112.705363)
+      (16,220.338425)
+      (32,429.678908)
+      (64,854.006967)
+      (128,1701.921100)
+      (256,3425.108692)
+    };
+    \addlegendentry{MLSAGS signing}
+
+    % Legend entry for the right-axis series (drawn in the overlay axis below).
+    \addlegendimage{
+      zkRedLine,
+      solid,
+      mark=square*,
+      mark options={fill=white, draw=zkRed},
+    }
+    \addlegendentry{MLSAGS verification}
+  \end{axis}
+
+  % Right y-axis: verification gas (K gas).
+  \begin{axis}[
+    zkamsAxis,
+    scale only axis,
+    at={(zkamsRingAxis.south west)},
+    anchor=south west,
+    width=0.70\columnwidth,
+    height=0.48\columnwidth,
+    axis x line=none,
+    axis y line*=right,
+    axis line style={draw=black!70, -{Stealth[length=3pt,width=3pt]}},
+    axis background/.style={fill=none},
+    grid=none,
+    xtick=\empty,
+    xmode=log,
+    log basis x=2,
+    xmin=1, xmax=256,
+    ymin=0, ymax=20000,
+    ytick={0,5000,10000,15000,20000},
+    yticklabels={0,5k,10k,15k,20k},
+    yticklabel style={xshift=-0.6em},
+    ylabel={verification Gas (K)},
+    ylabel style={xshift=-0.9em},
+  ]
+    \addplot[
+      zkRedLine,
+      solid,
+      % Slight canvas shift to visually separate the two (otherwise almost overlapping) trends.
+      transform canvas={xshift=3pt},
+      mark=square*,
+      mark options={fill=white, draw=zkRed},
+    ] coordinates {
+      (1,98.210600)
+      (2,162.489600)
+      (4,291.519800)
+      (8,550.788400)
+      (16,1067.471600)
+      (32,2099.674400)
+      (64,4171.840200)
+      (128,8348.845600)
+      (256,16666.245400)
+    };
+  \end{axis}
+\end{tikzpicture}

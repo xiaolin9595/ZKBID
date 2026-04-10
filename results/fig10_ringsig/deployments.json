@@ -1,0 +1,17 @@
+{
+  "rpc_url": "http://127.0.0.1:8545",
+  "from": "0x90f8bf6a479f320ead074411a4b0e7944ea8c9c1",
+  "gas_price": "0x77359400",
+  "tx_gas_cap": 0,
+  "artifact_source": "committed_artifacts",
+  "ecmath": {
+    "tx_hash": "0x68b4ba2fce92a8ccbb32bce822cf1e491ce32a6933178ca4526f8f8ad64ffcf0",
+    "contract_address": "0xe78a0f7e598cc8b0bb87894b0f60dd2a88d6a8ab",
+    "gas_used": 27967381
+  },
+  "mlsag_verify": {
+    "tx_hash": "0x1d4c4e554c507c830ccf40e8806a1caea0737a72c912bc5be7bd3810099a5a41",
+    "contract_address": "0x5b1869d9a4c187f2eaa108f3062412ecf0526b24",
+    "gas_used": 3991902
+  }
+}

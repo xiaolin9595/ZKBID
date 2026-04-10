@@ -1,0 +1,56 @@
+[
+  {
+    "ring_size": 1,
+    "mean_signing_time_ms": 19.190316699999997,
+    "std_signing_time_ms": 0.3103215982809007,
+    "nrep": 10
+  },
+  {
+    "ring_size": 2,
+    "mean_signing_time_ms": 32.36115409999998,
+    "std_signing_time_ms": 1.020417193707125,
+    "nrep": 10
+  },
+  {
+    "ring_size": 4,
+    "mean_signing_time_ms": 60.6702127,
+    "std_signing_time_ms": 4.554525141199246,
+    "nrep": 10
+  },
+  {
+    "ring_size": 8,
+    "mean_signing_time_ms": 112.70536269999994,
+    "std_signing_time_ms": 4.537900234715504,
+    "nrep": 10
+  },
+  {
+    "ring_size": 16,
+    "mean_signing_time_ms": 220.3384248999999,
+    "std_signing_time_ms": 5.460812582805773,
+    "nrep": 10
+  },
+  {
+    "ring_size": 32,
+    "mean_signing_time_ms": 429.6789083,
+    "std_signing_time_ms": 6.196227455524641,
+    "nrep": 10
+  },
+  {
+    "ring_size": 64,
+    "mean_signing_time_ms": 854.0069666999995,
+    "std_signing_time_ms": 10.945380793823077,
+    "nrep": 10
+  },
+  {
+    "ring_size": 128,
+    "mean_signing_time_ms": 1701.9210998999993,
+    "std_signing_time_ms": 17.986909374360092,
+    "nrep": 10
+  },
+  {
+    "ring_size": 256,
+    "mean_signing_time_ms": 3425.108691600003,
+    "std_signing_time_ms": 54.17311650408959,
+    "nrep": 10
+  }
+]

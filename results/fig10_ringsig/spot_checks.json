@@ -1,0 +1,18 @@
+[
+  {
+    "ring_size": 8,
+    "rep": 0,
+    "estimate_gas": 543432,
+    "tx_hash": "0xca5a487c1cf51d5cd9d9d7020453ca79ef2be4282ddecf622cb94f2571d00d26",
+    "gas_used": 440711,
+    "status": "0x1"
+  },
+  {
+    "ring_size": 64,
+    "rep": 0,
+    "estimate_gas": 4124381,
+    "tx_hash": "0x938a161544274ac51c9170ac90670162fb72ca0693337cffa07a9126c6ded7b3",
+    "gas_used": 3302145,
+    "status": "0x1"
+  }
+]

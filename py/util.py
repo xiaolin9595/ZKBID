@@ -1,6 +1,7 @@
 #from bn128_curve import *
 from optimized_curve import *
 import hashlib
+import sha3  # noqa: F401  # Patches hashlib.sha3_* to Keccak for contract compatibility.
 
 #alt_bn_128 curve parameters
 Ncurve = curve_order
